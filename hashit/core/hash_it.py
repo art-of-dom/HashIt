@@ -45,7 +45,8 @@ class HashIt(object):
             raise NotImplementedError
         return hash_str
 
-    def _sanatize_data(self, data):
+    @staticmethod
+    def _sanatize_data(data):
         """Temporary py2/py3 data helper"""
         if six.PY3:
             try:
