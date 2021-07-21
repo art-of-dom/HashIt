@@ -96,7 +96,8 @@ class TestHashIt(unittest.TestCase):
         assert_equals("271E", hashit.next_chunk())
 
     def test_hash_it_crc16_a_check_str(self):
-        assert_equals("BF05", HashIt().hash_it(HashType.CRC16_A, self.check_str))
+        assert_equals("BF05", HashIt().hash_it(
+            HashType.CRC16_A, self.check_str))
 
     def test_hash_it_crc32(self):
         assert_equals("29058C73", HashIt().hash_it(

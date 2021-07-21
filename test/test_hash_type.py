@@ -290,7 +290,8 @@ class TestHashType(unittest.TestCase):
         assert_true('CRC16_CCITT_FALSE' in HashType.__members__)
 
     def test_hash_type_crc16_ccitt_false_lookup(self):
-        assert_equals(HashType.CRC16_CCITT_FALSE, HashType['CRC16_CCITT_FALSE'])
+        assert_equals(HashType.CRC16_CCITT_FALSE,
+                      HashType['CRC16_CCITT_FALSE'])
 
     def test_hash_type_crc16_ccitt_false_has_hash_byte_length_2(self):
         assert_equals(2, HashType.CRC16_CCITT_FALSE.hash_byte_length())
