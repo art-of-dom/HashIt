@@ -12,11 +12,6 @@ from hashit.core.hash_type import HashType
 
 
 class TestHashType(unittest.TestCase):
-    def setUp(self):
-        pass
-
-    def tearDown(self):
-        pass
 
     # CRC 8
     def test_hash_type_crc8_in_hash_type(self):
@@ -178,7 +173,7 @@ class TestHashType(unittest.TestCase):
     def test_hash_type_crc8_maxim_has_hash_str_length_2(self):
         assert_equals(2, HashType.CRC8_MAXIM.hash_str_length())
 
-    def test_hash_type_crc8_maxim_is_crc(self):
+    def test_hash_type_crc8_MAXIM_is_crc(self):
         assert_true(HashType.CRC8_MAXIM.is_crc())
 
     def test_hash_type_crc8_maxim_is_not_md(self):
@@ -229,7 +224,8 @@ class TestHashType(unittest.TestCase):
     def test_hash_type_crc8_wcdma_is_not_sha(self):
         assert_false(HashType.CRC8_WCDMA.is_sha())
 
-    # Others
+    # CRC16
+
     def test_hash_type_crc16_in_hash_type(self):
         assert_true('CRC16' in HashType.__members__)
 
@@ -241,6 +237,273 @@ class TestHashType(unittest.TestCase):
 
     def test_hash_type_crc16_has_hash_str_length_4(self):
         assert_equals(4, HashType.CRC16.hash_str_length())
+
+    def test_hash_type_crc16_a_in_hash_type(self):
+        assert_true('CRC16_A' in HashType.__members__)
+
+    def test_hash_type_crc16_a_lookup(self):
+        assert_equals(HashType.CRC16_A, HashType['CRC16_A'])
+
+    def test_hash_type_crc16_a_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_A.hash_byte_length())
+
+    def test_hash_type_crc16_a_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_A.hash_str_length())
+
+    def test_hash_type_crc16_aug_ccitt_in_hash_type(self):
+        assert_true('CRC16_AUG_CCITT' in HashType.__members__)
+
+    def test_hash_type_crc16_aug_ccitt_lookup(self):
+        assert_equals(HashType.CRC16_AUG_CCITT, HashType['CRC16_AUG_CCITT'])
+
+    def test_hash_type_crc16_aug_ccitt_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_AUG_CCITT.hash_byte_length())
+
+    def test_hash_type_crc16_aug_ccitt_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_AUG_CCITT.hash_str_length())
+
+    def test_hash_type_crc16_buypass_in_hash_type(self):
+        assert_true('CRC16_BUYPASS' in HashType.__members__)
+
+    def test_hash_type_crc16_buypass_lookup(self):
+        assert_equals(HashType.CRC16_BUYPASS, HashType['CRC16_BUYPASS'])
+
+    def test_hash_type_crc16_buypass_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_BUYPASS.hash_byte_length())
+
+    def test_hash_type_crc16_buypass_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_BUYPASS.hash_str_length())
+
+    def test_hash_type_crc16_cmda2000_in_hash_type(self):
+        assert_true('CRC16_CMDA2000' in HashType.__members__)
+
+    def test_hash_type_crc16_cmda2000_lookup(self):
+        assert_equals(HashType.CRC16_CMDA2000, HashType['CRC16_CMDA2000'])
+
+    def test_hash_type_crc16_cmda2000_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_CMDA2000.hash_byte_length())
+
+    def test_hash_type_crc16_cmda2000_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_CMDA2000.hash_str_length())
+
+    def test_hash_type_crc16_ccitt_false_in_hash_type(self):
+        assert_true('CRC16_CCITT_FALSE' in HashType.__members__)
+
+    def test_hash_type_crc16_ccitt_false_lookup(self):
+        assert_equals(HashType.CRC16_CCITT_FALSE,
+                      HashType['CRC16_CCITT_FALSE'])
+
+    def test_hash_type_crc16_ccitt_false_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_CCITT_FALSE.hash_byte_length())
+
+    def test_hash_type_crc16_ccitt_false_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_CCITT_FALSE.hash_str_length())
+
+    def test_hash_type_crc16_dds_110_in_hash_type(self):
+        assert_true('CRC16_DDS_110' in HashType.__members__)
+
+    def test_hash_type_crc16_dds_110_lookup(self):
+        assert_equals(HashType.CRC16_DDS_110, HashType['CRC16_DDS_110'])
+
+    def test_hash_type_crc16_dds_110_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_DDS_110.hash_byte_length())
+
+    def test_hash_type_crc16_dds_110_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_DDS_110.hash_str_length())
+
+    def test_hash_type_crc16_dect_r_in_hash_type(self):
+        assert_true('CRC16_DECT_R' in HashType.__members__)
+
+    def test_hash_type_crc16_dect_r_lookup(self):
+        assert_equals(HashType.CRC16_DECT_R, HashType['CRC16_DECT_R'])
+
+    def test_hash_type_crc16_dect_r_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_DECT_R.hash_byte_length())
+
+    def test_hash_type_crc16_dect_r_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_DECT_R.hash_str_length())
+
+    def test_hash_type_crc16_dect_x_in_hash_type(self):
+        assert_true('CRC16_DECT_X' in HashType.__members__)
+
+    def test_hash_type_crc16_dect_x_lookup(self):
+        assert_equals(HashType.CRC16_DECT_X, HashType['CRC16_DECT_X'])
+
+    def test_hash_type_crc16_dect_x_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_DECT_X.hash_byte_length())
+
+    def test_hash_type_crc16_dect_x_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_DECT_X.hash_str_length())
+
+    def test_hash_type_crc16_dnp_in_hash_type(self):
+        assert_true('CRC16_DNP' in HashType.__members__)
+
+    def test_hash_type_crc16_dnp_lookup(self):
+        assert_equals(HashType.CRC16_DNP, HashType['CRC16_DNP'])
+
+    def test_hash_type_crc16_dnp_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_DNP.hash_byte_length())
+
+    def test_hash_type_crc16_dnp_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_DNP.hash_str_length())
+
+    def test_hash_type_crc16_en_13757_in_hash_type(self):
+        assert_true('CRC16_EN_13757' in HashType.__members__)
+
+    def test_hash_type_crc16_en_13757_lookup(self):
+        assert_equals(HashType.CRC16_EN_13757, HashType['CRC16_EN_13757'])
+
+    def test_hash_type_crc16_en_13757_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_EN_13757.hash_byte_length())
+
+    def test_hash_type_crc16_en_13757_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_EN_13757.hash_str_length())
+
+    def test_hash_type_crc16_genius_in_hash_type(self):
+        assert_true('CRC16_GENIUS' in HashType.__members__)
+
+    def test_hash_type_crc16_genius_lookup(self):
+        assert_equals(HashType.CRC16_GENIUS, HashType['CRC16_GENIUS'])
+
+    def test_hash_type_crc16_genius_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_GENIUS.hash_byte_length())
+
+    def test_hash_type_crc16_genius_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_GENIUS.hash_str_length())
+
+    def test_hash_type_crc16_kermit_in_hash_type(self):
+        assert_true('CRC16_KERMIT' in HashType.__members__)
+
+    def test_hash_type_crc16_kermit_lookup(self):
+        assert_equals(HashType.CRC16_KERMIT, HashType['CRC16_KERMIT'])
+
+    def test_hash_type_crc16_kermit_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_KERMIT.hash_byte_length())
+
+    def test_hash_type_crc16_kermit_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_KERMIT.hash_str_length())
+
+    def test_hash_type_crc16_maxim_in_hash_type(self):
+        assert_true('CRC16_MAXIM' in HashType.__members__)
+
+    def test_hash_type_crc16_maxim_lookup(self):
+        assert_equals(HashType.CRC16_MAXIM, HashType['CRC16_MAXIM'])
+
+    def test_hash_type_crc16_maxim_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_MAXIM.hash_byte_length())
+
+    def test_hash_type_crc16_maxim_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_MAXIM.hash_str_length())
+
+    def test_hash_type_crc16_mcrf4xx_in_hash_type(self):
+        assert_true('CRC16_MCRF4XX' in HashType.__members__)
+
+    def test_hash_type_crc16_mcrf4xx_lookup(self):
+        assert_equals(HashType.CRC16_MCRF4XX, HashType['CRC16_MCRF4XX'])
+
+    def test_hash_type_crc16_mcrf4xx_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_MCRF4XX.hash_byte_length())
+
+    def test_hash_type_crc16_mcrf4xx_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_MCRF4XX.hash_str_length())
+
+    def test_hash_type_crc16_modbus_in_hash_type(self):
+        assert_true('CRC16_MODBUS' in HashType.__members__)
+
+    def test_hash_type_crc16_modbus_lookup(self):
+        assert_equals(HashType.CRC16_MODBUS, HashType['CRC16_MODBUS'])
+
+    def test_hash_type_crc16_modbus_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_MODBUS.hash_byte_length())
+
+    def test_hash_type_crc16_modbus_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_MODBUS.hash_str_length())
+
+    def test_hash_type_crc16_riello_in_hash_type(self):
+        assert_true('CRC16_RIELLO' in HashType.__members__)
+
+    def test_hash_type_crc16_riello_lookup(self):
+        assert_equals(HashType.CRC16_RIELLO, HashType['CRC16_RIELLO'])
+
+    def test_hash_type_crc16_riello_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_RIELLO.hash_byte_length())
+
+    def test_hash_type_crc16_riello_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_RIELLO.hash_str_length())
+
+    def test_hash_type_crc16_t10_dif_in_hash_type(self):
+        assert_true('CRC16_T10_DIF' in HashType.__members__)
+
+    def test_hash_type_crc16_t10_dif_lookup(self):
+        assert_equals(HashType.CRC16_T10_DIF, HashType['CRC16_T10_DIF'])
+
+    def test_hash_type_crc16_t10_dif_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_T10_DIF.hash_byte_length())
+
+    def test_hash_type_crc16_t10_dif_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_T10_DIF.hash_str_length())
+
+    def test_hash_type_crc16_teledisk_in_hash_type(self):
+        assert_true('CRC16_TELEDISK' in HashType.__members__)
+
+    def test_hash_type_crc16_teledisk_lookup(self):
+        assert_equals(HashType.CRC16_TELEDISK, HashType['CRC16_TELEDISK'])
+
+    def test_hash_type_crc16_teledisk_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_TELEDISK.hash_byte_length())
+
+    def test_hash_type_crc16_teledisk_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_TELEDISK.hash_str_length())
+
+    def test_hash_type_crc16_tms37157_in_hash_type(self):
+        assert_true('CRC16_TMS37157' in HashType.__members__)
+
+    def test_hash_type_crc16_tms37157_lookup(self):
+        assert_equals(HashType.CRC16_TMS37157, HashType['CRC16_TMS37157'])
+
+    def test_hash_type_crc16_tms37157_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_TMS37157.hash_byte_length())
+
+    def test_hash_type_crc16_tms37157_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_TMS37157.hash_str_length())
+
+    def test_hash_type_crc16_usb_in_hash_type(self):
+        assert_true('CRC16_USB' in HashType.__members__)
+
+    def test_hash_type_crc16_usb_lookup(self):
+        assert_equals(HashType.CRC16_USB, HashType['CRC16_USB'])
+
+    def test_hash_type_crc16_usb_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_USB.hash_byte_length())
+
+    def test_hash_type_crc16_usb_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_USB.hash_str_length())
+
+    def test_hash_type_crc16_x_25_in_hash_type(self):
+        assert_true('CRC16_X_25' in HashType.__members__)
+
+    def test_hash_type_crc16_x_25_usb_lookup(self):
+        assert_equals(HashType.CRC16_X_25, HashType['CRC16_X_25'])
+
+    def test_hash_type_crc16_x_25_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_X_25.hash_byte_length())
+
+    def test_hash_type_crc16_x_25_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_X_25.hash_str_length())
+
+    def test_hash_type_crc16_xmodem_in_hash_type(self):
+        assert_true('CRC16_XMODEM' in HashType.__members__)
+
+    def test_hash_type_crc16_xmodem_lookup(self):
+        assert_equals(HashType.CRC16_XMODEM, HashType['CRC16_XMODEM'])
+
+    def test_hash_type_crc16_xmodem_has_hash_byte_length_2(self):
+        assert_equals(2, HashType.CRC16_XMODEM.hash_byte_length())
+
+    def test_hash_type_crc16_xmodem_has_hash_str_length_4(self):
+        assert_equals(4, HashType.CRC16_XMODEM.hash_str_length())
+
+    # Others
 
     def test_hash_type_crc32_in_hash_type(self):
         assert_true('CRC32' in HashType.__members__)

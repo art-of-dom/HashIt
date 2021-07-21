@@ -28,9 +28,6 @@ class TestHashIt(unittest.TestCase):
                                                 "test/support/example.bin"
                                                 ), chunk_size=16)
 
-    def tearDown(self):
-        pass
-
     def test_hash_it_crc8(self):
         assert_equals("14", HashIt().hash_it(HashType.CRC8, self.example))
 
@@ -97,6 +94,10 @@ class TestHashIt(unittest.TestCase):
         assert_equals("DC7C", hashit.next_chunk())
         assert_equals("5AAF", hashit.next_chunk())
         assert_equals("271E", hashit.next_chunk())
+
+    def test_hash_it_crc16_a_check_str(self):
+        assert_equals("BF05", HashIt().hash_it(
+            HashType.CRC16_A, self.check_str))
 
     def test_hash_it_crc32(self):
         assert_equals("29058C73", HashIt().hash_it(
